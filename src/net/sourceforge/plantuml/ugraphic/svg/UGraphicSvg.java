@@ -177,7 +177,16 @@ public class UGraphicSvg extends AbstractUGraphic<SvgGraphics> implements ClipCo
 		return super.matchesProperty(propertyName);
 	}
 
-	// @Override
+	@Override
+	public void startGroup(String... attributeNamesAndValues) {
+		getGraphicObject().createGroupWithClassName(attributeNamesAndValues);
+	}
+
+	@Override
+	public void endGroup() {
+		getGraphicObject().endGroup();
+	}
+// @Override
 	// public String startHiddenGroup() {
 	// getGraphicObject().startHiddenGroup();
 	// return null;

@@ -57,4 +57,10 @@ public interface UGraphic {
 	public void flushUg();
 
 	public boolean matchesProperty(String propertyName);
+
+	default public void startGroup(String... attributeNamesAndValues) {
+	}
+
+	default public void endGroup() {
+	}
 }
