@@ -1,3 +1,10 @@
+Personal Fork
+=============
+
+Custom features copied from the pre-git [plantuml-fork](https://github.com/wcurrie/plantuml-fork):
+
+* Allow sequence diagram participant 'heads' (boxes at the top) to follow page scrolling.
+
 PlantUML
 ========
 [![Build Status](https://travis-ci.org/plantuml/plantuml.png?branch=master)](https://travis-ci.org/plantuml/plantuml)
