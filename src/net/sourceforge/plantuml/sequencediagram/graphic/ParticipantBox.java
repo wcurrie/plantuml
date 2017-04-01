@@ -61,17 +61,19 @@ public class ParticipantBox implements Pushable {
 	private final Component line;
 	private final Component tail;
 	private final Component delayLine;
+    private final String participantCode;
 
 	private int cpt = CPT++;
 
-	public ParticipantBox(Component head, Component line, Component tail, Component delayLine, double startingX, int outMargin) {
+	public ParticipantBox(Component head, Component line, Component tail, Component delayLine, double startingX, int outMargin, String participantCode) {
 		this.outMargin = outMargin;
 		this.startingX = startingX;
 		this.head = head;
 		this.line = line;
 		this.tail = tail;
 		this.delayLine = delayLine;
-	}
+        this.participantCode = participantCode;
+    }
 
 	@Override
 	public String toString() {
@@ -159,6 +161,7 @@ public class ParticipantBox implements Pushable {
 
 	public void drawLineU22(UGraphic ug, double startingY, final double endingY, boolean showTail, double myDelta) {
 		ug = ug.apply(new UTranslate(startingX, 0));
+        ug.startGroup("class", "participant-line", "id", "line-for-" + participantCode);
 		if (delays.size() > 0) {
 			final StringBounder stringBounder = ug.getStringBounder();
 			for (GraphicalDelayText delay : delays) {
@@ -174,6 +177,7 @@ public class ParticipantBox implements Pushable {
 			}
 		}
 		drawLineIfLowerThan(ug, startingY, endingY, line, endingY);
+		ug.endGroup();
 	}
 
 	private void drawLineIfLowerThan(UGraphic ug, double startingY, double endingY, Component comp, double limitY) {

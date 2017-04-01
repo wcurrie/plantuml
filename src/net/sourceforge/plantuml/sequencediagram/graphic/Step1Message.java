@@ -75,7 +75,7 @@ class Step1Message extends Step1Abstract {
 					null, drawingSet.getSkinParam(), null);
 
 			this.messageArrow = new MessageArrow(freeY.getFreeY(range), drawingSet.getSkin(), comp,
-					getLivingParticipantBox1(), getLivingParticipantBox2(), message.getUrl(), compAliveBox);
+					getLivingParticipantBox1(), getLivingParticipantBox2(), message, compAliveBox);
 		}
 
 		final List<NoteOnMessage> noteOnMessages = message.getNoteOnMessages();
